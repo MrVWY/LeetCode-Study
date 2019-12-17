@@ -1,5 +1,8 @@
 package main
 
+import "fmt"
+
+//二叉树路径和
 type treeNode struct {
 	Value int
 	Left *treeNode
@@ -42,4 +45,14 @@ func Walk(root *treeNode, sum int, temp []int) [][]int {
 		r = append(r,TR...)
 	}
 	return r
+}
+
+func main() {
+	Treeson1_2 := &treeNode{Value: 7, Left:  nil, Right: nil,}
+	Treeson1_1 := &treeNode{Value: 15, Left:  nil, Right: nil,}
+	Treeson1 := &treeNode{Value: 20, Left:  Treeson1_1, Right: Treeson1_2,}
+	Treeson2 := &treeNode{Value: 5, Left:  nil, Right: nil,}
+	Tree := &treeNode{Value: 10, Left:  Treeson1, Right: Treeson2,}
+	a := Start(Tree,45)
+	fmt.Println(a)
 }
