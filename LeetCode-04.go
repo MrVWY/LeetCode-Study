@@ -9,7 +9,7 @@ type treeNode struct {
 	Right *treeNode
 }
 
-func Start(root *treeNode, sum int) [][]int {
+func Start04(root *treeNode, sum int) [][]int {
 	var r [][]int
 	if root == nil{
 		return r
@@ -53,6 +53,6 @@ func main() {
 	Treeson1 := &treeNode{Value: 20, Left:  Treeson1_1, Right: Treeson1_2,}
 	Treeson2 := &treeNode{Value: 5, Left:  nil, Right: nil,}
 	Tree := &treeNode{Value: 10, Left:  Treeson1, Right: Treeson2,}
-	a := Start(Tree,45)
+	a := Start04(Tree,45)
 	fmt.Println(a)
 }
