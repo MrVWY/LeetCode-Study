@@ -20,3 +20,22 @@ func generate(numRows int) [][]int {
 	}
 	return v
 }
+
+//斐波那契数列
+func Fibonacci_Sequence_One(n int) int{
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return 1
+	} else if n > 1 {
+		return Fibonacci_Sequence_One(n-1) + Fibonacci_Sequence_One(n-2)
+	} else {
+		return -1
+	}
+}
+
+func main() {
+	n := 7
+	i := Fibonacci_Sequence_One(n)
+	fmt.Println(i)
+}
