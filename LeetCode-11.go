@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 //最长回文
-
 func longestPalindrome(s string) string {
 	if len(s) == 0 {
 		return ""
@@ -60,4 +62,30 @@ func isPalindrome_One(s string, mid int) string {
 		R++
 	}
 	return s[L+1:R]
+}
+
+
+//回文数
+func isPalindrome_Two(x int) bool {
+	s := true
+	if ( x != 0 && x % 10 == 0) || x < 0 {
+		return false
+	}
+	if x >= 0 && x <= 10 {
+		return true
+	}
+	a := strconv.Itoa(x)
+	end := len(a) - 1
+	for start := 0 ; start < len(a) ; start++ {
+		if start == end {
+			break
+		}
+		if a[start] == a[end] {
+			end--
+			continue
+		}else {
+			s = false
+		}
+	}
+	return s
 }

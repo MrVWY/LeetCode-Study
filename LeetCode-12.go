@@ -59,3 +59,28 @@ func a(str string) int {
 	}
 	return a * flag
 }
+
+//. 整数反转
+func reverse(x int) int {
+	flag := 1
+	if x == 0 {
+		return x
+	}
+	if x < 0 {
+		flag = -1
+	}
+	x = x * flag
+	res := 0
+	for {
+		if x == 0 {
+			break
+		}
+		pop := x % 10
+		x = x / 10
+		res = res * 10 + pop
+		if res >= 2147483648 {
+			return 0
+		}
+	}
+	return res * flag
+}
