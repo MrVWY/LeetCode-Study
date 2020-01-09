@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"time"
 )
 //三数之和
 //执行用时 :64 ms
@@ -59,4 +60,17 @@ func next(nums []int,first int , last int)(int,int){
 		}
 	}
 	return first , last
+}
+
+
+func (i *IPAMHandle) DeferFormatter(begin int64, rec interface{}, fullLog *string, event string) {
+	end := time.Now().UnixNano()
+	processTime := end - begin
+
+	if rec != nil {
+		*fullLog += fmt.Sprint(rec, "\n===============================\n")
+		bsLog.Err(event, "process_time: ", processTime, " ns, ", fullLog)
+		panic(fmt.Sprint(fullLog))
+	}
+	bsLog.Info(event, "process_time: ", processTime, " ns, ", fullLog)
 }
