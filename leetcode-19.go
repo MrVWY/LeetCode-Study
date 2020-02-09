@@ -92,3 +92,31 @@ func maxs(leftnum,rightnum,crossnum int ) int {
 
 	return crossnum
 }
+
+
+//打家劫舍
+//动态规划:使用res[i]表示第i间房屋能够偷窃到的最高金额,nums[i]表示第i间房屋存放的金额,对于第n间房屋，能够偷窃到的最高金额是res[i-1]或res[i-2]+nums[i]
+func rob(nums []int) int {
+	leght := len(nums)
+	if leght == 1 {
+		return nums[0]
+	}
+	if leght == 0 {
+		return 0
+	}
+	res := make([]int,leght+1)
+	res[1] = nums[0]
+	for i := 2 ; i <= leght ; i++ {
+		res[i] = maxss(res[i-1],res[i-2]+nums[i-1])
+		fmt.Println(res)
+
+	}
+	return res[leght]
+}
+
+func maxss(a,b int) int {
+	if a >= b {
+		return a
+	}
+	return b
+}

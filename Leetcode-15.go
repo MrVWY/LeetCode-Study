@@ -66,15 +66,6 @@ func rotate(nums []int, k int)  {
 	}
 }
 
-//只出现一次的数字 (XOR操作)
-func singleNumber(nums []int) int {
-	ret := 0
-	for _, v := range nums {
-		ret ^= v
-	}
-	return ret
-}
-
 //加一
 func plusOne(digits []int) []int {
 	res := make([]int,len(digits)+1)
