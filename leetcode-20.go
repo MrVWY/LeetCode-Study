@@ -71,3 +71,44 @@ func flipAndInvertImage(A [][]int) [][]int {
 	//}
 	//return A
 }
+
+//1299. 将每个元素替换为右侧最大元素
+//逆序遍历
+func replaceElements(arr []int) []int {
+	var ans int = -1
+	for i:=len(arr)-1;i>-1;i-- {
+		arr[i],ans = ans, max(ans,arr[i])
+	}
+	return arr
+}
+
+func max(a,b int) int {
+	if a < b {
+		return b
+	}
+	return a
+}
+
+
+//20. 有效的括号 利用栈
+func isValid2(s string) bool {
+	stack := make([]int32,len(s))
+	stacklength := 0
+
+	for _, v := range s {
+		if (v == '(') || (v == '[') ||  (v == '{') {
+			stack[stacklength] = v
+			stacklength++
+		}else{
+			if stacklength == 0 {
+				return false
+			}
+			if (v == ')' && stack[stacklength -1] == '(' ) || (v == ']'  && stack[stacklength -1] == '[') || (v == '}'  && stack[stacklength -1] == '{') {
+				stacklength--
+			}else {
+				return false
+			}
+		}
+	}
+	return stacklength == 0
+}
