@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"runtime"
+	"time"
 )
 
 //1116. 打印零与奇偶数   0-1-0-2-0-3-0-4-0-5
@@ -26,7 +26,9 @@ func (o *ZeroEvenOdd) Zero(printNumber func(int)) {
 			printNumber(0)
 			o.StreamZeroToOdd <- struct{}{}
 		default:
-			runtime.Gosched()
+			//第一次循环过后,因为其他 StreamOddToZero 或者 StreamEvenToZero 还没有接收到新的数据，因此将该goroutins休眠,等待新数据到来
+			//runtime.Gosched()
+			<-time.After(time.Microsecond)
 			i--
 		}
 	}
