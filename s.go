@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"container/list"
+	"fmt"
+)
 
 type Product struct {
 	Name      string `json:"name"`
@@ -8,14 +11,9 @@ type Product struct {
 	Number    string  `json:"number"`
 	Price     string `json:"price"`
 	IsOnSale  map[string]string `json:"is_on_sale"`
+	s *list.List
 }
 func main(){
-	a := [][]int{
-		{1,2,3},
-		{2,3,3},
-		{4,6,5},
-	}
-	for _ , l := range  a {
-		fmt.Println(l[0])
-	}
+	s := "abc"
+	fmt.Println(string(s[1]))
 }
