@@ -1,35 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
 
-//43. 字符串相乘
-func multiply(num1 string, num2 string) string {
-	var result string
-	if num1 == "0" || num2 == "0" {
-		return "0"
-	}
-	length_All := len(num1) + len(num2)
-	res := make([]int,length_All)
-	for i := len(num1) - 1 ; i >= 0 ; i-- {
-		n1, _ := strconv.Atoi(string(num1[i]))
-		for j := len(num2) - 1 ; j >= 0 ; j-- {
-			n2, _ := strconv.Atoi(string(num2[j]))
-			sum := res[i+j+1] + n1 * n2
-			res[i+j+1] = sum % 10
-			res[i+j] += sum / 10
-		}
-
-	}
-	fmt.Println(res)
-	for i := 0 ; i < len(res) ; i++ {
-		if i == 0 && res[i] == 0 {continue}
-		result += strconv.Itoa(res[i])
-	}
-	return result
-}
 
 //405. 数字转换为十六进制数
 //首先要知道16进制数在计算机中是怎么表示的，由于对于16进制一个有16个数（0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f）所以我们只需要使用4位 2^4=16刚好可以表示16个数，所以计算机在内部是用4位来表示16进制的0000表示0,0001表示1.....1111表示f.
@@ -44,7 +15,7 @@ func toHex(num int) string {
 		mask   = 0xf
 	)
 	res := make([]byte,8)
-	index := 7
+	index := 7 //16进制位数最大为6 00FF FFFF
 	for i := 7 ; i >= 0 ; i-- {
 		val := num & mask //获得num后四位二进制数
 		res[i] = hexStr[val]
@@ -113,3 +84,40 @@ func (this *MyQueue) Empty() bool {
  * param_3 := obj.Peek();
  * param_4 := obj.Empty();
  */
+
+
+//706. 设计哈希映射  拉链法
+type MyHashMap struct {
+	content map[int]int
+}
+
+
+/** Initialize your data structure here. */
+func Constructor() MyHashMap {
+	my := MyHashMap{}
+	my.content = map[int]int{}
+	return my
+}
+
+
+/** value will always be non-negative. */
+func (this *MyHashMap) Put(key int, value int)  {
+	this.content[key] = value
+}
+
+
+/** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
+func (this *MyHashMap) Get(key int) int {
+	val, ok := this.content[key]
+	if !ok {
+		return -1
+	}
+
+	return val
+}
+
+
+/** Removes the mapping of the specified value key if this map contains a mapping for the key */
+func (this *MyHashMap) Remove(key int)  {
+	delete(this.content, key)
+}
