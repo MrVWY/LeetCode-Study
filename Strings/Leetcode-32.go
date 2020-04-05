@@ -71,3 +71,26 @@ func decodeAtIndex(S string, K int) string {
 	}
 	return ""
 }
+
+//820. 单词的压缩编码
+func minimumLengthEncoding(words []string) int {
+	m := make(map[string]int,0)
+	for _, v := range words {
+		if _, ok := m[v] ; !ok {
+			m[v]++
+		}
+	}
+
+	for _ , w := range words {
+		for i := 1 ; i < len(w) ; i++ {
+			delete(m, w[i:])
+		}
+	}
+
+	a := 0
+	for k, _ := range m {
+		a += len(k) + 1
+	}
+
+	return a
+}

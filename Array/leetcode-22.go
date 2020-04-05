@@ -60,3 +60,53 @@ func maxSatisfied(customers []int, grumpy []int, X int) int {
 	return sum - lost + clam
 }
 
+//面试题 17.16. 按摩师   典型的动态规定
+func massage(nums []int) int {
+	length := len(nums)
+	if length == 0 {
+		return 0
+	}
+	dp0 , dp1 := 0 , nums[0]
+	for i := 1 ; i < length ; i++ {
+		tmp0 := max(dp0,dp1)
+		tmp1 := dp0 + nums[i]
+		dp0 , dp1 = tmp0 , tmp1
+	}
+	return max(dp0 , dp1)
+}
+
+func max(a,b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+//42、接雨水  利用单调栈
+func trap(height []int) int {
+	sum := 0
+	stack := make([]int,0)
+	idx := 0
+	for idx < len(height) {
+		for len(stack) != 0 && height[idx] > height[stack[len(stack)-1]]{
+			h := height[stack[len(stack)-1]]
+			stack = stack[0:len(stack)-1]
+			if len(stack) == 0 {
+				break
+			}
+			weight := idx - stack[len(stack)-1] -1
+			min := min(height[stack[len(stack)-1]], height[idx])
+			sum += weight * (min - h)
+		}
+		stack = append(stack,idx)
+		idx++
+	}
+	return sum
+}
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}

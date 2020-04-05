@@ -53,6 +53,8 @@ func strStr(haystack string, needle string) int {
 	}
 	dp := kmp(needleRune)
 	j := 0
+	ABCD
+	DC AB D ABCD
 	for i := 0; i < M; i++ {
 		j = dp[j][haystackRune[i]]
 		if j == N {
@@ -65,7 +67,7 @@ func strStr(haystack string, needle string) int {
 func kmp(needleRune []rune) []map[rune]int {
 
 	l := len(needleRune)
-
+	//ABCD
 	charMap := make(map[rune]int)
 	var firstChar rune
 	for i, s := range needleRune {
@@ -74,19 +76,62 @@ func kmp(needleRune []rune) []map[rune]int {
 		}
 		charMap[s] = i
 	}
+	//charMap['B'] =1
+	//charMap['C'] =2
+	//charMap['D'] =3
+
 	dp := make([]map[rune]int, l)
 	dp[0] = make(map[rune]int)
-	dp[0][firstChar] = 1
+	//dp[0][firstChar='A'] = 1
 	//影子状态 X 初始为 0
+	//dp = rune : rune : int
+
+	dp[0]['A'] = 1
 	X := 0
 	for i := 1; i < l; i++ {
 		dp[i] = make(map[rune]int)
 		for sj := range charMap {
 			dp[i][sj] = dp[X][sj]
+
+			//i = 1
+			//dp[1]['B'] = dp[0]['B'] = 0
+			//dp[1]['A'] = dp[0]['A'] = 0
+			//dp[1]['B'] = dp[0]['B'] = 0
+			//
+			//i = 2
+			//dp[2]['B'] = dp[0]['B'] = 0
+			//dp[2]['A'] = dp[0]['A'] = 0
+			//dp[2]['B'] = dp[0]['B'] = 0
+			//
+			//i = 3
+			//dp[3]['B'] = dp[2]['B'] = 2
+			//dp[3]['A'] = dp[2]['A'] = 0
+			//dp[3]['B'] = dp[2]['B'] = 2
 		}
 		dp[i][needleRune[i]] = i + 1
+		//dp[i=1]['B'] = 2
+		//dp[i=2]['A'] = 3
+		//dp[i=3]['B'] = 4
+		//
+		//i = 1
+		//dp[1]['B'] = dp[0]['B'] = 2
+		//dp[1]['A'] = dp[0]['A'] = 0
+		//dp[1]['B'] = dp[0]['B'] = 2
+		//
+		//i = 2
+		//dp[2]['B'] = dp[0]['B'] = 0
+		//dp[2]['A'] = dp[0]['A'] = 3
+		//dp[2]['B'] = dp[0]['B'] = 0
+		//
+		//i = 3
+		//dp[3]['B'] = dp[2]['B'] = 4
+		//dp[3]['A'] = dp[2]['A'] = 3
+		//dp[3]['B'] = dp[2]['B'] = 4
 		// 更新影子状态
 		X = dp[X][needleRune[i]]
+		//0  = dp[0]['B'] i = 1
+		//1  = dp[0]['A'] 1 = 2
+		//2  = dp[1]['B'] 1 = 3
 	}
 
 	return dp

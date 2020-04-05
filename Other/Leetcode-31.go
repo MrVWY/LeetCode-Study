@@ -57,3 +57,60 @@ func removeDuplicates(s string, k int) string {
 
 
 
+func orangesRotting(grid [][]int) int {
+	if grid == nil || len(grid) == 0 {
+		return 0
+	}
+
+	row := len(grid)
+	ver := len(grid[0])
+	time := 0 // 次数
+
+	dx := []int{-1,0,1,0}
+	dy := []int{0,1,0,-1}
+
+	badfruit := make([]int,0)
+
+	//收集坏水果
+	for i := 0 ; i < row ; i++ {
+		for j := 0 ; j < ver ; j++ {
+			if grid[i][j] == 2 {
+				badfruit = append(badfruit,i * ver + j)
+			}
+		}
+	}
+
+	for len(badfruit) != 0 {
+		time++
+		cuurentLayer := len(badfruit)
+		for i := 0 ; i < cuurentLayer ; i++ {
+			badNode := badfruit[0]
+			badfruit = badfruit[1:]
+			badNodeRow , badNodever :=  badNode/ver, badNode%ver
+			for k := 0 ; k < 4 ; k++ {
+				badNodeRowR := badNodeRow + dx[k]
+				badNodeverV := badNodever + dy[k]
+				if badNodeRowR >= 0 &&  badNodeRowR < row && badNodeverV >=0 && badNodeverV < ver && grid[badNodeRowR][badNodeverV] == 1 {
+					grid[badNodeRowR][badNodeverV] = 2
+					badfruit = append(badfruit, badNodeRowR * ver + badNodeverV)
+				}
+			}
+		}
+	}
+
+	for i := 0 ; i < row ; i++ {
+		for j := 0 ; j < ver ; j++ {
+			if grid[i][j] == 1 {
+				return -1
+			}
+		}
+	}
+
+	if time == 0 {
+		return time
+	}else {
+		time = time - 1
+	}
+
+	return time
+}
