@@ -49,3 +49,37 @@ func lastRemaining(n int, m int) int {
 	}
 	return f
 }
+
+//面试题13. 机器人的运动范围 和岛屿那题类似 dfs
+func movingCount(m int, n int, k int) int {
+	dp := make([][]int, m+1)
+	for i := range dp {
+		dp[i] = make([]int, n+1)
+	}
+
+	return dfs(m, n, 0, 0, k, dp)
+}
+
+func dfs(m, n, i, j, k int, dp [][]int) int {
+	if i < 0 || j < 0 || i >= m || j >= n || dp[i][j] == 1 || (sumPos(i)+sumPos(j)) > k {
+		return 0
+	}
+
+	dp[i][j] = 1
+
+	sum := 1
+	sum += dfs(m, n, i, j+1, k, dp)
+	sum += dfs(m, n, i+1, j, k, dp)
+	return sum
+}
+
+func sumPos(n int) int {
+	var sum int
+
+	for n > 0 {
+		sum += n % 10
+		n = n / 10
+	}
+
+	return sum
+}
