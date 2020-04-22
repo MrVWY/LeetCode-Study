@@ -18,11 +18,9 @@ func heaping(tree []int, root int, size int)  {
 	right := 2*root + 2
 	max := tree[root] //假设root是最大值
 	if left < size && tree[left] > max {
-		fmt.Println(max)
 		max = tree[left]
 	}
 	if right < size && tree[right] > max  {
-		fmt.Println(max)
 		max = tree[right]
 	}
 	if max != tree[root] {

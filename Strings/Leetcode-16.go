@@ -67,7 +67,7 @@ func strStr(haystack string, needle string) int {
 func kmp(needleRune []rune) []map[rune]int {
 
 	l := len(needleRune)
-	//ABCD
+	//ABC
 	charMap := make(map[rune]int)
 	var firstChar rune
 	for i, s := range needleRune {

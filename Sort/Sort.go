@@ -121,6 +121,19 @@ func merge(s []int,L,M,R int)  {
 	for j < rightSize {s[k] = Right[j];j++;k++}
 }
 
+//希尔排序
+func shellsort(s []int)  {
+	if len(s) <= 1 {return}
+	var i,j,gap int
+	for gap = len(s)/2 ; gap > 0 ; gap /=2 {
+		for i = gap ; i < len(s) ; i++ {
+			for j = i -gap ; j >= 0 && s[j] > s[j+gap] ; j -= gap {
+				s[j], s[j+gap] = s[j+gap], s[j]
+			}
+		}
+	}
+}
+
 func swap(slice []int, i int, j int) {
 	slice[i], slice[j] = slice[j], slice[i]
 }
@@ -134,6 +147,7 @@ func main() {
 	//indexFor(s,10)
 	//fmt.Println(s)
 	s := []int{2,8,9,10,4,5,6,7}
-	mergeSort(s,0,len(s)-1)
+	//mergeSort(s,0,len(s)-1)
+	shellsort(s)
 	fmt.Println(s)
 }

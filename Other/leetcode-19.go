@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 //爬楼梯
@@ -21,27 +20,6 @@ func climbStairs(n int) int {
 	}
 
 }
-
-//买卖股票的最佳时机
-func maxProfit2(prices []int) int {
-	maxprice := 0
-	minprice := math.MaxInt64
-	if prices == nil || len(prices) == 1 {
-		return 0
-	}
-	fmt.Println(maxprice)
-	for i := 0 ; i < len(prices) ; i++ {
-		if prices[i] < minprice {
-			minprice = prices[i]
-		}else if (prices[i] - minprice > maxprice) {
-			maxprice = prices[i] - minprice
-			fmt.Println(maxprice)
-		}
-	}
-	fmt.Println(maxprice)
-	return maxprice
-}
-
 
 //最大子序和
 func maxSubArray(nums []int) int {
