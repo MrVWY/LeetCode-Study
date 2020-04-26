@@ -51,3 +51,18 @@ func com(nums []int, i int) int {
 	}
 	return result
 }
+
+//1046. 最后一块石头的重量
+func lastStoneWeight(stones []int) int {
+	if len(stones) == 1 {
+		return stones[0]
+	}
+	length := len(stones)
+	sort.Ints(stones)
+	for stones[length-2]!=0{
+		stones[length-1] -= stones[length-2]
+		stones[length-2] = 0
+		sort.Ints(stones)
+	}
+	return stones[length-1]
+}

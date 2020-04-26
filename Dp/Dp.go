@@ -1,6 +1,18 @@
 package Dp
 
+//动态规划：
+//1、状态定义
+//2、状态转移方程
+//3、思考初始化
+//4、思考输出
 import "fmt"
+
+func max(a,b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
 
 //53. 最大子序和
 func maxSubArray(nums []int) int {
@@ -22,14 +34,8 @@ func maxSubArray(nums []int) int {
 	return maxs
 }
 
-func max(a,b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 //面试题 08.11. 硬币
+//二维dp
 func waysToChange(n int) int {
 	coins := []int{1,5,10,25}
 	dp := make([][]int,4)
@@ -51,7 +57,7 @@ func waysToChange(n int) int {
 	}
 	return dp[3][n]
 }
-
+//一维dp
 func waysToChange(n int) int {
 	dp := make([]int, n + 1)
 	dp[0] = 1
@@ -68,4 +74,22 @@ func waysToChange(n int) int {
 
 	fmt.Println(dp)
 	return dp[n] % 1000000007
+}
+
+//面试题47. 礼物的最大价值
+func maxValue(grid [][]int) int {
+	row := len(grid)
+	ver := len(grid[0])
+	for i := 1 ; i < ver ; i++ {
+		grid[0][i] = grid[0][i] + grid[0][i-1]
+	}
+	for i := 1 ; i < row ; i++ {
+		grid[i][0] = grid[i-1][0] + grid[i][0]
+	}
+	for i := 1 ; i < row ; i++ {
+		for j := 1 ; j < ver ; j++ {
+			grid[i][j] = grid[i][j] + max(grid[i-1][j], grid[i][j-1])
+		}
+	}
+	return grid[row-1][ver-1]
 }
