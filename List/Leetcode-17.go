@@ -71,6 +71,7 @@ func isPalindrome2(head *ListNode) bool {
 	var preNode2 *ListNode = nil
 	for fast != nil && fast.Next != nil {
 		fast = fast.Next.Next
+		//从中点开始翻转链表
 		preNode2 = slow.Next
 		slow.Next = preNode
 		preNode = slow

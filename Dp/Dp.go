@@ -14,6 +14,13 @@ func max(a,b int) int {
 	return b
 }
 
+func min(a,b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
 //53. 最大子序和
 func maxSubArray(nums []int) int {
 	if len(nums) == 0 {

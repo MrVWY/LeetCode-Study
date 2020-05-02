@@ -6,12 +6,6 @@ package Dp
 //3、思考初始化
 //4、思考输出
 
-func max(a,b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
 
 //面试题14- I. 剪绳子  2 <= n <= 58
 func cuttingRope(n int) int {
@@ -76,4 +70,35 @@ func longestPalindromeSubseq(s string) int {
 	}
 	//fmt.Println(dp)
 	return dp[0][n-1]
+}
+
+//494. 目标和
+//该问题可以转换为 Subset Sum 问题，从而使用 0-1 背包的方法来求解。
+//可以将这组数看成两部分，P 和 N，其中 P 使用正号，N 使用负号，有以下推导：
+//	sum(P) - sum(N) = target
+//		sum(P) + sum(N) + sum(P) - sum(N) = target + sum(P) + sum(N)
+//		2 * sum(P) = target + sum(nums)
+func findTargetSumWays(nums []int, S int) int {
+	if len(nums)==0 || nums==nil{
+		return 0
+	}
+	sum := 0
+	for i := 0; i < len(nums) ;i++ {
+		sum +=nums[i]
+	}
+	if S > sum {
+		return 0
+	}
+	t := S + sum
+	if t%2!=0{
+		return 0
+	}
+	dp := make([]int,t/2+1)
+	dp[0] = 1
+	for i := 0 ; i < len(nums) ; i++ {
+		for j := t/2 ; j >= nums[i] ; j--{
+			dp[j] =dp[j] + dp[j-nums[i]]
+		}
+	}
+	return dp[t/2]
 }
