@@ -1,6 +1,12 @@
 package Dp
 
+//动态规划：
+//1、状态定义
+//2、状态转移方程
+//3、思考初始化
+//4、思考输出
 
+//983. 最低票价
 func mincostTickets(days []int, costs []int) int {
 	dp := make([]int,days[len(days)-1]+1)
 	dp[0] = 0
@@ -36,4 +42,28 @@ func minCostClimbingStairs(cost []int) int {
 		dp[i] = min(dp[i-1], dp[i-2]) + cost[i]
 	}
 	return min(dp[len(cost)-1],dp[len(cost)-2])
+}
+
+//474. 一和零
+func findMaxForm(strs []string, m int, n int) int {
+	if len(strs) == 0 {
+		return 0
+	}
+	dp := make([][]int, m+1)
+	for i := 0 ; i <= m ; i++ {
+		dp[i] = make([]int, n+1)
+	}
+
+	for _, v := range strs {
+		d := make(map[int32]int)  //可以优化成2个int类型的变量
+		for _ , value := range v {
+			d[value]++
+		}
+		for i := m ; i >=d['0'] ; i-- {
+			for j := n ; j >=d['1'] ; j-- {
+				dp[i][j] = max(dp[i][j],1+dp[i-d['0']][j-d['1']])  //当前i个0和j个1,可以由当前字串组成或者（如果不能组成的话）加上dp[i-d['0']][j-d['1']]
+			}
+		}
+	}
+	return dp[m][n]
 }
