@@ -1,6 +1,6 @@
 package main
 
-//1095. 山脉数组中查找目标值  二分
+//1095. 山脉数组中查找目标值  二分查找
 /**
  * // This is the MountainArray's API interface.
  * // You should not implement it, or speculate about its implementation
@@ -59,7 +59,7 @@ func findInMountainArray(target int, mountainArr *MountainArray) int {
 	return -1
 }
 
-//33. 搜索旋转排序数组  二分
+//33. 搜索旋转排序数组  二分查找
 func search(nums []int, target int) int {
 	left, right := 0, len(nums) - 1
 	for left <= right {

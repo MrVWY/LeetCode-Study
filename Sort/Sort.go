@@ -138,6 +138,22 @@ func swap(slice []int, i int, j int) {
 	slice[i], slice[j] = slice[j], slice[i]
 }
 
+//二分查找
+func binarySearch(nums []int, target int) int {
+	l, r := 0, len(nums)-1
+	for l <= r {
+		m := (l+r)/2
+		if nums[m] < target {
+			l = m+1
+		}else if nums[m] > target {
+			r = m-1
+		}else {
+			return m
+		}
+	}
+	return -1
+}
+
 func main() {
 	//s := []int{9,0,6,5,8,2,1,7,4,3}
 	//insertionSort(s)
