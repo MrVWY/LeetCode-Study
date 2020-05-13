@@ -1,1 +1,2 @@
-###LeetCode Question collection and classification！！！
+### LeetCode Question collection and classification！！！
+Here, some topics have been divided and labeled with algorithms, such as jumping games, buying and selling stocks.....
