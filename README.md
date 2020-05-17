@@ -1,7 +1,7 @@
-# LeetCode Question collection and classification！！！
+## LeetCode Question collection and classification!!! (记录自己Leetcode的解题之路)
 
 ### 传送门
-#### 经典串烧类题目
+#### 串烧类题目
 
 + [买卖股票的最佳时机(Stock)](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stock)
   + 121 买卖股票的最佳时机
@@ -20,7 +20,28 @@
   + 1306 跳跃游戏 III
   + 1345 跳跃游戏 IV (未解决)
   + 1340 跳跃游戏 V (未解决)
-
++ [螺旋矩阵(Spiral_matrix)](https://github.com/MrVWY/LeetCode-Study/blob/master/Spiral_matrix)
+  + 54 螺旋矩阵
+  + 59 螺旋矩阵 II
+  + 885 螺旋矩阵 III (未解决)
 #### 经典排序算法
 
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
+
+
+#### 目录结构
+
++ [Breadth_First_Search]()
++ [Depth_First_Search](https://github.com/MrVWY/LeetCode-Study/tree/master/Depth-First-Search)
++ [Dynamic_programming](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming)
+  + [Stock](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stock)
+    + Basic solution
+    + Advanced solution
+  + [Game_Dynamic_programming](https://github.com/MrVWY/LeetCode-Study/blob/master/Dynamic_programming/Game_Dp.go)
++ [Greedy](https://github.com/MrVWY/LeetCode-Study/tree/master/greedy)
++ [Heap](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)
++ [House_Robber](https://github.com/MrVWY/LeetCode-Study/tree/master/House_Robber)
++ [Jump Game](https://github.com/MrVWY/LeetCode-Study/tree/master/Jump_Game)
++ [Spiral_matrix](https://github.com/MrVWY/LeetCode-Study/blob/master/Spiral_matrix)
++ [Reverse_List](https://github.com/MrVWY/LeetCode-Study/tree/master/Spiral_matrix)
++ [Cache](https://github.com/MrVWY/LeetCode-Study/tree/master/Cache)
