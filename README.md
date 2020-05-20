@@ -31,7 +31,7 @@
   + 从上到下打印二叉树
   + 从上到下打印二叉树 II
   + 从上到下打印二叉树 III
-+ [接雨水]()
++ [接雨水](https://github.com/MrVWY/LeetCode-Study/tree/master/Catch_rain)
   + 接雨水 I
   + 接雨水 II (未解决)(difficult)
 + [课程表]()  
@@ -39,13 +39,14 @@
   + 207 课程表
   + 210 课程表 II
   + 630 课程表 III (未解决)(difficult)
-+ [单词接龙]()  
++ [单词接龙](https://github.com/MrVWY/LeetCode-Study/blob/master/Breadth_First_Search/Word_Solitaire/Word_Solitaire.go)  
 (BFS)(双向BFS)
   + 127 单词接龙
   + 126 单词接龙 II (未解决)(difficult)
-#### 经典排序算法
+#### 经典
 
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
++ [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation)
 
 #### 目录结构
 
