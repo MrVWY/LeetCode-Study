@@ -44,17 +44,17 @@
 (BFS)(双向BFS`未完成`)
   + 127 单词接龙
   + 126 单词接龙 II (未解决)(difficult)
-+ [只出现一次的数字](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_2.go)
++ [只出现一次的数字](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_2.go)  
 (位运算)
   + 136 只出现一次的数字
   + 137 只出现一次的数字 II
   + 260 只出现一次的数字 III
-+ [石子游戏(stone_Game)](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stone_Game)
++ [石子游戏(stone_Game)](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stone_Game)  
 (博弈动态规划)
   + 877 石子游戏
   + 1140 石子游戏 II (未解决)(medium)
   + 1406 石子游戏 III (未解决)(difficult)
-+ [子集](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_3.go)
++ [子集](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_3.go)  
 (位运算)(回溯算法`未完成`)
   + 78 子集 I
   + 90 子集 II
