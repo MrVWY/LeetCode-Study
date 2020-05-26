@@ -23,6 +23,7 @@
   + 1345 跳跃游戏 IV (未解决)(difficult)
   + 1340 跳跃游戏 V (未解决)(difficult)
 + [螺旋矩阵(Spiral_matrix)](https://github.com/MrVWY/LeetCode-Study/blob/master/Spiral_matrix)
+(数学)
   + 54 螺旋矩阵
   + 59 螺旋矩阵 II
   + 885 螺旋矩阵 III (未解决)(difficult)
@@ -40,14 +41,27 @@
   + 210 课程表 II
   + 630 课程表 III (未解决)(difficult)
 + [单词接龙](https://github.com/MrVWY/LeetCode-Study/blob/master/Breadth_First_Search/Word_Solitaire/Word_Solitaire.go)  
-(BFS)(双向BFS)
+(BFS)(双向BFS`未完成`)
   + 127 单词接龙
   + 126 单词接龙 II (未解决)(difficult)
++ [只出现一次的数字](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_2.go)
+(位运算)
+  + 136 只出现一次的数字
+  + 137 只出现一次的数字 II
+  + 260 只出现一次的数字 III
++ [石子游戏(stone_Game)](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stone_Game)
+(博弈动态规划)
+  + 877 石子游戏
+  + 1140 石子游戏 II (未解决)(medium)
+  + 1406 石子游戏 III (未解决)(difficult)
++ [子集](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_3.go)
+(位运算)(回溯算法`未完成`)
+  + 78 子集 I
+  + 90 子集 II
 #### 经典
-
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
-+ [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation)
-
++ [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
++ [约瑟夫环问题]()
 #### 目录结构
 
 + [Breadth_First_Search]()
