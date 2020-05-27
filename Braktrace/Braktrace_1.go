@@ -1,5 +1,17 @@
 package Braktrace
 
+import "sort"
+
+//39.组合总和
+//40. 组合总和 II
+
+//46. 全排列
+//47. 全排列 II
+
+//78. 子集
+//90. 子集 II
+
+
 //回溯算法的框架：(伪代码)
 //result = []
 //def backtrack(路径, 选择列表):
@@ -49,5 +61,42 @@ func Backtrack(nums []int, path []int) {
 		}
 		//状态重置
 		path = path[:len(path)-1]
+	}
+}
+
+//47. 全排列 II
+func permuteUnique(nums []int) [][]int {
+	result = make([][]int,0,2*len(nums))
+	if len(nums) == 1 {
+		result = append(result, nums)
+		return result
+	}
+	path := make([]int, 0 , len(nums))
+	used := make([]bool, len(nums))
+	sort.Ints(nums)
+	BacktrackPermuteunique(nums, path,used)
+	return result
+}
+
+func BacktrackPermuteunique(nums []int, path []int, used []bool) {
+	if len(nums) == 0 {
+		return
+	}
+	if len(path) == cap(path) {
+		newpath := make([]int, len(path))
+		copy(newpath, path)
+		result = append(result, newpath)
+	}
+	for i := 0 ; i < len(nums) ; i++ {
+		if !used[i] {
+			if i > 0 && nums[i] == nums[i-1] && !used[i-1] {
+				continue //剪枝
+			}
+			used[i] = true
+			path = append(path, nums[i])
+			BacktrackPermuteunique(nums, path, used)
+			used[i] = false //置位
+			path = path[:len(path)-1]
+		}
 	}
 }

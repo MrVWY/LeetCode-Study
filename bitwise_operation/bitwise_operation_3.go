@@ -50,21 +50,21 @@ func subsetsWithDup(nums []int) [][]int {
 	res, total := [][]int{}, 1 << len(nums)
 	for i := 0 ; i < total ; i++ {
 		a := []int{}
-		flag := false
+		flag := true
 		//用j做为i的向右推位的个数, 0 <= j <= len(nums)-1
 		for j := 0 ; j < len(nums) ; j++ {
 			//判断当前是否为1
 			if ((i>>j) & 1) == 1 {
 				//当前是重复数字，并且二进制的前一位是 0
 				if j > 0 && nums[j] == nums[j-1] && (i>>(j-1)) & 1 == 0 {
-					flag = true
+					flag = false
 					break
 				}else {
 					a = append(a, nums[j])
 				}
 			}
 		}
-		if !flag {
+		if flag {
 			res = append(res, a)
 		}
 	}

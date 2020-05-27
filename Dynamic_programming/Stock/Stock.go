@@ -78,7 +78,18 @@ func maxProfit(prices []int) int {
 //123. 买卖股票的最佳时机 III
 //注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
 func maxProfit(prices []int) int {
-
+	if len(prices) < 2 {return 0}
+	dp := make([][3][3]int, len(prices))
+	// dp[买卖天数][是否持股][买了多少次]
+	dp[0][0][0], dp[0][1][0] = 0, -prices[0]
+	dp[0][0][1], dp[0][0][2] = 0, 0
+	dp[0][1][1], dp[0][1][2] = 0, 0
+	for i := 1 ; i < len(prices) ; i++ {
+		dp[i][0][0], dp[i][1][0] = 0, max(dp[i-1][1][0],dp[i-1][0][0]-prices[i])
+		dp[i][0][1], dp[i][0][2] = max(dp[i-1][1][0]+prices[i],dp[i-1][0][1]), max(dp[i-1][1][1]+prices[i],dp[i-1][0][2])
+		dp[i][1][1], dp[i][1][2] = max(dp[i-1][0][1]-prices[i], dp[i-1][1][1]), 0
+	}
+	return max(max(dp[len(prices)-1][0][1],dp[len(prices)][0][2]),0)
 }
 
 //188. 买卖股票的最佳时机 IV
