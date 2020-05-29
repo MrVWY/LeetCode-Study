@@ -17,6 +17,13 @@ func max(a,b int) int {
 	return b
 }
 
+func min(a,b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
 //121. 买卖股票的最佳时机
 //单笔交易
 func maxProfit(prices []int) int {
@@ -79,17 +86,19 @@ func maxProfit(prices []int) int {
 //注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
 func maxProfit(prices []int) int {
 	if len(prices) < 2 {return 0}
-	dp := make([][3][3]int, len(prices))
-	// dp[买卖天数][是否持股][买了多少次]
-	dp[0][0][0], dp[0][1][0] = 0, -prices[0]
-	dp[0][0][1], dp[0][0][2] = 0, 0
-	dp[0][1][1], dp[0][1][2] = 0, 0
-	for i := 1 ; i < len(prices) ; i++ {
-		dp[i][0][0], dp[i][1][0] = 0, max(dp[i-1][1][0],dp[i-1][0][0]-prices[i])
-		dp[i][0][1], dp[i][0][2] = max(dp[i-1][1][0]+prices[i],dp[i-1][0][1]), max(dp[i-1][1][1]+prices[i],dp[i-1][0][2])
-		dp[i][1][1], dp[i][1][2] = max(dp[i-1][0][1]-prices[i], dp[i-1][1][1]), 0
+	//买入卖出 买入卖出 买入卖出 ！！！！！！！！！
+	//minPrice_1 第一次买入
+	//maxProfit_1 第一次卖出
+	//minPrice_2_AfterBuy 第二次买入
+	//maxProfit_2 第二次卖出
+	minPrice_1, maxProfit_1, minPrice_2_AfterBuy, maxProfit_2 :=  math.MaxInt32,0,math.MinInt32,0
+	for i := 0 ; i < len(prices) ; i++ {
+		minPrice_1 = min(minPrice_1, prices[i])
+		maxProfit_1 = max(maxProfit_1, prices[i] - minPrice_1)
+		minPrice_2_AfterBuy = max(minPrice_2_AfterBuy, maxProfit_1 - prices[i])
+		maxProfit_2 = max(maxProfit_2, minPrice_2_AfterBuy + prices[i])
 	}
-	return max(max(dp[len(prices)-1][0][1],dp[len(prices)][0][2]),0)
+	return maxProfit_2
 }
 
 //188. 买卖股票的最佳时机 IV

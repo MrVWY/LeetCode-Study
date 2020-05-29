@@ -7,7 +7,7 @@
 (DP)
   + 121 买卖股票的最佳时机
   + 122 买卖股票的最佳时机 II
-  + 123 买卖股票的最佳时机 III (未解决)(difficult)
+  + 123 买卖股票的最佳时机 III 
   + 188 买卖股票的最佳时机 IV (未解决)(difficult)
   + 309 最佳买卖股票时机含冷冻期
   + 714 买卖股票的最佳时机含手续费
@@ -58,6 +58,15 @@
 (位运算)(回溯算法`未完成`)
   + 78 子集 I
   + 90 子集 II
++ [全排列]()  
+(回溯算法+剪枝)
+  + 46 全排列
+  + 47 全排列 II
++ [组合总和]()
+  + 39 组合总和
+  + 40 组合总和 II 
+  + 216 组合总和 III 
+  + 377 组合总和 Ⅳ (未解决)(medium)
 #### 经典
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)

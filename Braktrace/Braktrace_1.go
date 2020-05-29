@@ -1,12 +1,10 @@
 package Braktrace
 
 import "sort"
-
-//39.组合总和
-//40. 组合总和 II
-
-//46. 全排列
-//47. 全排列 II
+/*
+	注意在Golang中copy和append的深浅拷贝问题
+		- copy ： 深拷贝, copy后分别为不同的地址
+ */
 
 //78. 子集
 //90. 子集 II
