@@ -58,35 +58,31 @@
 (位运算)(回溯算法`未完成`)
   + 78 子集 I
   + 90 子集 II
-+ [全排列]()  
++ [全排列](https://github.com/MrVWY/LeetCode-Study/blob/master/Braktrace/Braktrace_1.go)  
 (回溯算法+剪枝)
   + 46 全排列
   + 47 全排列 II
-+ [组合总和]()
++ [组合总和](https://github.com/MrVWY/LeetCode-Study/blob/master/Braktrace/Braktrace_2.go)  
+(回溯算法+剪枝)
   + 39 组合总和
   + 40 组合总和 II 
   + 216 组合总和 III 
   + 377 组合总和 Ⅳ (未解决)(medium)
++ [环形链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Circular_linked_list.go)  
+  + 141 环形链表
+  + 142 环形链表 II
++ [反转链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Reverse_List/reverseList1.go)  
+  + 206 反转链表
+  + 25 K 个一组翻转链表
+
 #### 经典
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
 + [约瑟夫环问题]()
-#### 目录结构
++ [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 
-+ [Breadth_First_Search]()
-+ [Depth_First_Search](https://github.com/MrVWY/LeetCode-Study/tree/master/Depth-First-Search)
-+ [Dynamic_programming](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming)
-  + [Stock](https://github.com/MrVWY/LeetCode-Study/tree/master/Dynamic_programming/Stock)
-    + Basic solution
-    + Advanced solution
-  + [Game_Dynamic_programming](https://github.com/MrVWY/LeetCode-Study/blob/master/Dynamic_programming/Game_Dp.go)
-+ [Greedy](https://github.com/MrVWY/LeetCode-Study/tree/master/greedy)
-+ [Heap](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)
-+ [House_Robber](https://github.com/MrVWY/LeetCode-Study/tree/master/House_Robber)
-+ [Jump Game](https://github.com/MrVWY/LeetCode-Study/tree/master/Jump_Game)
-+ [Spiral_matrix](https://github.com/MrVWY/LeetCode-Study/blob/master/Spiral_matrix)
-+ [Reverse_List](https://github.com/MrVWY/LeetCode-Study/tree/master/Spiral_matrix)
-+ [Cache](https://github.com/MrVWY/LeetCode-Study/tree/master/Cache)
+#### 周赛新世界
++ (夜喵场-第27场) 5410 课程安排 IV  ---打表法
 
 #### 算法总结
 
