@@ -68,13 +68,28 @@
   + 40 组合总和 II 
   + 216 组合总和 III 
   + 377 组合总和 Ⅳ (未解决)(medium)
-+ [环形链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Circular_linked_list.go)  
-  + 141 环形链表
-  + 142 环形链表 II
-+ [反转链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Reverse_List/reverseList1.go)  
-  + 206 反转链表
-  + 25 K 个一组翻转链表
-
++ [链表]()
+    + [环形链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Circular_linked_list.go)  
+      + 141 环形链表
+      + 142 环形链表 II
+    + [反转链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Reverse_List/reverseList1.go)  
+      + 206 反转链表
+      + 92 反转链表 II
+      + 25 K 个一组翻转链表
+    + 234 回文链表
+    + 86 分隔链表
+    + 61 旋转链表
++ [分糖果]()
+  + 575 分糖果
+  + 1103 分糖果 II (未解决)
++ [单调栈]()
+  + 42 接雨水 (difficult)
+  + 739 每日温度
+  + 496 下一个更大元素 I
+  + 316 去除重复字母 (difficult)
+  + 901 股票价格跨度
+  + 402 移除K位数字
+  + 581 最短无序连续子数组
 #### 经典
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
