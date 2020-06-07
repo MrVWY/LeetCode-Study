@@ -11,11 +11,16 @@
   + 188 买卖股票的最佳时机 IV (未解决)(difficult)
   + 309 最佳买卖股票时机含冷冻期
   + 714 买卖股票的最佳时机含手续费
-+ [打家劫舍(House Robber)](https://github.com/MrVWY/LeetCode-Study/tree/master/House_Robber)  
++ [打家劫舍(House Robber)](https://github.com/MrVWY/LeetCode-Study/blob/master/Dynamic_programming/House_Robber/House_Robber.go)  
 (DP)(dfs)
   + 198 打家劫舍
   + 213 打家劫舍 II
   + 337 打家劫舍 III
++ [不同路径](https://github.com/MrVWY/LeetCode-Study/blob/master/Dynamic_programming/Different_paths/Different_paths.go)  
+(Dp)
+  + 62 不同路径
+  + 63 不同路径 II
+  + 980 不同路径 III (未解决)(difficult)
 + [跳跃游戏(Jump Game)](https://github.com/MrVWY/LeetCode-Study/tree/master/Jump_Game)
   + 55 跳跃游戏
   + 45 跳跃游戏 II
@@ -68,7 +73,7 @@
   + 40 组合总和 II 
   + 216 组合总和 III 
   + 377 组合总和 Ⅳ (未解决)(medium)
-+ [链表]()
++ [链表](https://github.com/MrVWY/LeetCode-Study/tree/master/List)
     + [环形链表](https://github.com/MrVWY/LeetCode-Study/blob/master/List/Circular_linked_list.go)  
       + 141 环形链表
       + 142 环形链表 II
@@ -76,9 +81,9 @@
       + 206 反转链表
       + 92 反转链表 II
       + 25 K 个一组翻转链表
-    + 234 回文链表
-    + 86 分隔链表
-    + 61 旋转链表
+    + 234 回文链表 (Four.go)
+    + 86 分隔链表  (Four.go)
+    + 61 旋转链表 (Four.go)  
 + [分糖果]()
   + 575 分糖果
   + 1103 分糖果 II (未解决)
@@ -96,5 +101,6 @@
 + [约瑟夫环问题]()
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 
-#### 周赛新世界
-+ (夜喵场-第27场) 5410 课程安排 IV  ---打表法
+#### [周赛新世界]()
++ (夜喵场-第27场) 5410 课程安排 IV  ---打表法  
++ 第192周 3/4 
