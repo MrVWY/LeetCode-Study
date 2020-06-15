@@ -109,7 +109,7 @@
   + 236 [二叉树的最近公共祖先](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L8)
   + 102 [二叉树的层序遍历](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L94)
   + 
-#### [周赛新世界]()
+#### [周赛新世界](https://github.com/MrVWY/LeetCode-Study/tree/master/Competition)
 + (夜喵场-第27场) 5410 课程安排 IV  ---打表法  
 + 第192周 3/4
 + (夜喵场-第28场) 2/4
