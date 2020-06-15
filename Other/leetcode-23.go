@@ -19,24 +19,6 @@ func removeDuplicates2(S string) string {
 	return string(stack)
 }
 
-//面试题28. 对称的二叉树
-func isSymmetric2(root *TreeNode) bool {
-	if root == nil {
-		return true
-	}
-	return h(root.Left,root.Right)
-}
-
-func h(t1 *TreeNode,t2 *TreeNode) bool{
-	if t1 == nil && t2 ==nil {
-		return true
-	}else if t1 == nil || t2 == nil {
-		return false
-	}
-
-	return t1.Val == t2.Val && h(t1.Left,t2.Right) && h(t1.Right,t2.Left)
-}
-
 //面试题59 - I. 滑动窗口的最大值
 func maxSlidingWindow(nums []int, k int) []int {
 	res := []int{}

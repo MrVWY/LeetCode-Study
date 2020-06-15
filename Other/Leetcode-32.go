@@ -41,15 +41,6 @@ func partition(arr []int, l int, r int) int {
 	return i+1
 }
 
-//面试题62. 圆圈中最后剩下的数字   约瑟夫环问题 f(n,m)=[f(n−1,m)+m]%n
-func lastRemaining(n int, m int) int {
-	f := 0
-	for i := 2 ; i <= n ; i++ {
-		f = (m + f) % i
-	}
-	return f
-}
-
 //面试题13. 机器人的运动范围 和岛屿那题类似 dfs
 func movingCount(m int, n int, k int) int {
 	dp := make([][]int, m+1)
