@@ -1,6 +1,9 @@
 package Daily
 
-import "sort"
+import (
+	"context"
+	"sort"
+)
 
 //5428. 重新排列数组
 func shuffle(nums []int, n int) []int {
@@ -18,6 +21,7 @@ func shuffle(nums []int, n int) []int {
 		}
 	}
 	return res
+	context.Background()
 }
 
 //5429. 数组中的 k 个最强值

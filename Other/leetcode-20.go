@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -33,21 +32,6 @@ func singleNumber(nums []int) int {
 		ret ^= v
 	}
 	return ret
-}
-
-//137. 只出现一次的数字 II
-//1 &^ 1 = 0
-//1 &^ 0 = 1
-//0 &^ 1 = 0
-//0 &^ 0 = 0
-func singleNumber2(nums []int) int {
-	a,b := 0,0
-	for _,v := range nums{
-		a = a ^ v &^ b
-		b = b ^ v &^ a
-		fmt.Println(a,b)
-	}
-	return a
 }
 
 //832. 翻转图像

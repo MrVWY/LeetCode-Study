@@ -19,21 +19,6 @@ func removeDuplicates(nums []int) int {
 	return index + 1
 }
 
-//买卖股票的最佳时机 II
-func maxProfit(prices []int) int {
-	maxprice := 0
-	if prices == nil || len(prices) == 1 {
-		return 0
-	}
-
-	for i := 1 ; i < len(prices) ; i++ {
-		if (prices[i] - prices[i-1]) > 0 {
-			maxprice += prices[i] - prices[i-1]
-		}
-	}
-	return maxprice
-}
-
 //旋转数组
 func rotate(nums []int, k int)  {
 	lens := len(nums)

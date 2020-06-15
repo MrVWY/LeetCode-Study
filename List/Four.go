@@ -61,7 +61,9 @@ func partition(head *ListNode, x int) *ListNode {
 	return beforeNode.Next
 }
 
-// 61 旋转链表
+// 61 旋转链表 快慢指针
+//A={1,3,5,7,9,11}
+//B={2,4,9,11}
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil{
 		return nil
@@ -83,3 +85,25 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	head, node.Next =node.Next ,nil
 	return head
 }
+
+//160. 相交链表
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	curA, curB := headA, headB
+	for curA != curB {
+		if curA == nil {
+			curA = headB
+		}else {
+			curA = curA.Next
+		}
+
+		if curB == nil {
+			curB = headA
+		}else {
+			curB = curB.Next
+		}
+	}
+
+	return curA
+}
+
+//

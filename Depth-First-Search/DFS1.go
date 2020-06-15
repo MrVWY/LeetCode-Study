@@ -25,3 +25,33 @@ func abs(v int) int {
 	}
 	return v
 }
+
+//后继者  二叉搜索树
+//所谓 p 的后继节点，就是这串升序数字中，比 p 大的下一个。
+//如果 p 大于当前节点的值，说明后继节点一定在 RightTree
+//如果 p 等于当前节点的值，说明后继节点一定在 RightTree
+//如果 p 小于当前节点的值，说明后继节点一定在 LeftTree 或自己就是
+		//递归调用 LeftTree，如果是空的，说明当前节点就是答案
+		//如果不是空的，则说明在 LeftTree 已经找到合适的答案，直接返回即可
+//二叉搜索树 中序遍历  left mid right
+//右子树的左子树前面永远的mid
+//左子树的右子树后面永远是mid
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+
+	if root.Val <= p.Val {
+		return inorderSuccessor(root.Right, p)
+	}else{
+		left := inorderSuccessor(root.Left, p)
+		//重点
+		if left == nil {
+			return root
+		}else {
+			return left
+		}
+	}
+
+	return nil
+}
