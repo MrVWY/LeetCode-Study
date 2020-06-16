@@ -67,29 +67,6 @@ func isvalid(root *TreeNode, min int , max int ) bool {
 	return isvalid(root.Left,min , root.Val) && isvalid(root.Right, root.Val , max)
 }
 
-//101. 对称二叉树
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-func isSymmetric(root *TreeNode) bool {
-	return isvalid2(root,root)
-}
-
-func isvalid2(root1 *TreeNode,root2 *TreeNode) bool {
-	if root1 == nil && root2 == nil {
-		return true
-	}
-	if root1 == nil || root2 == nil {
-		return false
-	}
-	return (root1.Val == root2.Val) && isvalid2(root1.Left,root2.Right) && isvalid2(root1.Right,root2.Left)
-}
-
 
 //102. 二叉树的层序遍历
 func levelOrder(root *TreeNode) [][]int {
