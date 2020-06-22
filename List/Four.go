@@ -106,4 +106,59 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	return curA
 }
 
-//
+//分割链表
+func partition(head *ListNode, x int) *ListNode {
+	if head == nil {
+		return nil
+	}
+	d1, d2 := &ListNode{}, &ListNode{}
+	cur1, cur2 := d1,d2
+	cur := head
+	for cur != nil {
+		if cur.Val < x {
+			cur1.Next = cur
+			cur = cur.Next
+			cur1 = cur1.Next
+			cur1.Next = nil
+		}else if cur.Val >= x {
+			cur2.Next = cur
+			cur = cur.Next
+			cur2 = cur2.Next
+			cur2.Next = nil
+		}
+	}
+	cur1.Next = d2.Next
+	return d1.Next
+}
+
+//链表相交
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	t1, t2 := headA, headB
+	for t1 != t2 {
+		if t1 == nil {
+			t1 = headB
+		}else {
+			t1 = t1.Next
+		}
+		if t2 == nil {
+			t2 = headA
+		}else{
+			t2 = t2.Next
+		}
+	}
+	return t1
+}
+
+//返回倒数第 k 个节点
+func kthToLast(head *ListNode, k int) int {
+	p := head
+	for i := 0 ; i < k ; i++ {
+		p = p.Next
+	}
+
+	for p != nil {
+		p = p.Next
+		head = head.Next
+	}
+	return head.Val
+}

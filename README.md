@@ -88,6 +88,9 @@
     + 86 分隔链表  (Four.go)
     + 61 旋转链表 (Four.go)  
     + 160 相交链表 (Four.go)  
+    + 返回倒数第K个节点 (Four.go)
+    + 分割链表 (Four.go)
+    + 链表相交 (Four.go)
 + [分糖果](https://github.com/MrVWY/LeetCode-Study/blob/master/Sweets/Sweets.go)  
   + 575 分糖果
   + 1103 分糖果 II (未解决)
@@ -105,10 +108,14 @@
 + [约瑟夫环问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Josephus_problem.go)
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 + [树]()
-  + 101 [对称二叉树](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L70)
+  + 101 对称二叉树 |
+  + 617 合并二叉树 |
+  + 226 翻转二叉树 |--->[Five](https://github.com/MrVWY/LeetCode-Study/blob/master/Tree/Five.go)
+  + 965 单值二叉树 |
+  + 110 平衡二叉树 |
   + 236 [二叉树的最近公共祖先](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L8)
   + 102 [二叉树的层序遍历](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L94)
-  + 
+
 #### [周赛新世界](https://github.com/MrVWY/LeetCode-Study/tree/master/Competition)
 + (夜喵场-第27场) 5410 课程安排 IV  ---打表法  
 + 第192周 3/4
