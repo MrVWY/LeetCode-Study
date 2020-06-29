@@ -14,15 +14,17 @@ func heaping(tree []int, root int, size int)  {
 	if root > size {
 		return
 	}
-	left := 2*root + 1
-	right := 2*root + 2
+	left := 2*root + 1 //左孩子
+	right := 2*root + 2 //右孩子
 	max := tree[root] //假设root是最大值
+	//比较root left right
 	if left < size && tree[left] > max {
 		max = tree[left]
 	}
 	if right < size && tree[right] > max  {
 		max = tree[right]
 	}
+
 	if max != tree[root] {
 		if right < size && max == tree[right]  {
 			tree[right] = tree[root]
