@@ -106,8 +106,10 @@
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
 + [约瑟夫环问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Josephus_problem.go)
++ [卡特兰数](https://github.com/MrVWY/LeetCode-Study/blob/master/Catalan.go)
++ [二进制求和]()
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
-+ [树]()
++ [树](https://github.com/MrVWY/LeetCode-Study/tree/master/Tree)
   + 101 对称二叉树 |
   + 617 合并二叉树 |
   + 226 翻转二叉树 |--->[Five](https://github.com/MrVWY/LeetCode-Study/blob/master/Tree/Five.go)
@@ -115,9 +117,13 @@
   + 110 平衡二叉树 |
   + 236 [二叉树的最近公共祖先](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L8)
   + 102 [二叉树的层序遍历](https://github.com/MrVWY/LeetCode-Study/blob/9fba1b16c68a7bb50f981b8ab262e3c4a98cadde/Tree/tree1.go#L94)
-
++ [原地哈希](https://github.com/MrVWY/LeetCode-Study/blob/master/HashInPlace.go)
+  + 41 缺失的第一个正数
+  + 442 数组中重复的数据
+  + 448 找到所有数组中消失的数字
 #### [周赛新世界](https://github.com/MrVWY/LeetCode-Study/tree/master/Competition)
 + (夜喵场-第27场) 5410 课程安排 IV  ---打表法  
 + 第192周 3/4
 + (夜喵场-第28场) 2/4
 + 第193周 1/4    1482. 制作 m 束花所需的最少天数
++ (夜喵场-第29场) 2/4 (第三题可惜了) 1493. 删掉一个元素以后全为 1 的最长子数组
