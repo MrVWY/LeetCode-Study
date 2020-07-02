@@ -1,5 +1,10 @@
 package main
 
+type ListNode struct {
+	Val int
+	Next *ListNode
+}
+
 //03. 数组中重复的数字
 func findRepeatNumber(nums []int) int {
 	m := make(map[int]int, 0)
@@ -90,6 +95,111 @@ func minArray(numbers []int) int {
 	return numbers[i]
 }
 
+//16. 数值的整数次方
+//快速幂
+//虑比如我们计算 x^8，就是 x^2 * x^2 * x^2 * x^2，当我们计算出来 x^2 之后就可以只进行三次乘法就可以了，相对于之前的 7 次乘法，时间大大减少了。
+//也就是 x^n 可以分解成若干个 x^i 的乘积
+//我们这里使用快速幂进行求解。我们看一下 n 的二进制形式一定是若干个 1 和 0 构成，比如 9 = 1001 = 1*2^3 + 0*2^2 + 0*2^1 + 1*2^0
+//所以我们可以看出来，每次乘的值都是前一个值的2倍，当 n 对应位为0时跳过
+func myPow(x float64, n int) float64 {
+	if x == 0 {
+		return 0
+	}
+	res := 1.00
+	if n < 0 {
+		x, n = 1/x, -n
+	}
+
+	for n != 0 {
+		//判断该位是否为1
+		if n & 1 == 1 {
+			res = res * x
+		}
+		x = x * x
+		n = n >> 1
+	}
+	return res
+}
+
+//18. 删除链表的节点
+func deleteNode(head *ListNode, val int) *ListNode {
+	if head == nil {
+		return head
+	}
+	dummy := &ListNode{Val:0 , Next: head}
+	cur := dummy
+	for cur.Next != nil {
+		if cur.Next.Val == val {
+			cur.Next = cur.Next.Next
+			break
+		}
+		cur = cur.Next
+	}
+	return dummy.Next
+}
+
+//21. 调整数组顺序使奇数位于偶数前面
+func exchange(nums []int) []int {
+	left, right :=0, len(nums)-1
+	for left < right {
+		if nums[left] & 1 == 1 {
+			left++
+			continue
+		}
+
+		if nums[right] & 1 == 0 {
+			right--
+			continue
+		}
+		nums[left], nums[right] = nums[right], nums[left]
+	}
+	return nums
+}
+
+//22. 链表中倒数第k个节点
+func getKthFromEnd(head *ListNode, k int) *ListNode {
+	fast, slow := head, head
+	for i := 0 ; i < k ; i++ {
+		if fast == nil {
+			return slow
+		}
+		fast = fast.Next
+	}
+
+	for fast != nil {
+		slow, fast = slow.Next, fast.Next
+	}
+	return slow
+}
+
+//25. 合并两个排序的链表
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
+	dummy := &ListNode{} //虚拟节点
+	head := dummy //移动节点
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			head.Next =  l1
+			l1 = l1.Next
+		}else  {
+			head.Next = l2
+			l2 = l2.Next
+		}
+		head = head.Next
+	}
+	if l1 != nil {
+		head.Next = l1
+	}
+	if l2 != nil {
+		head.Next = l2
+	}
+	return dummy.Next
+}
 
 //54. 二叉搜索树的第k大节点
 //中序遍历的顺序为左中右，即得到的是一个递增序列
