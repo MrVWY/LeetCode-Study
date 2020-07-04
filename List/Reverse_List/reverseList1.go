@@ -76,8 +76,10 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 				return heads.Next
 			}
 		}
+		//nex := tail.Next
 		head, tail = reverseList(head,tail)
 		pre.Next = head
+		//tail.Next = nex
 		pre = tail
 		head = tail.Next
 	}

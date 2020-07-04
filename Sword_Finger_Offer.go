@@ -1,8 +1,16 @@
 package main
 
+import "math"
+
 type ListNode struct {
 	Val int
 	Next *ListNode
+}
+
+type TreeNode struct {
+	Val int
+	Left *TreeNode
+	Right *TreeNode
 }
 
 //03. 数组中重复的数字
@@ -77,6 +85,40 @@ func reversePrint(head *ListNode) []int {
 	}
 	return res
 }
+
+//09. 用两个栈实现队列
+type CQueue struct {
+	Stack1 []int //插入队列
+	Stack2 []int //删除队列
+}
+
+func Constructor() CQueue {
+	return CQueue{
+		Stack1 : make([]int, 0),
+		Stack2 : make([]int, 0),
+	}
+}
+
+func (this *CQueue) AppendTail(value int)  {
+	this.Stack1 = append(this.Stack1, value)
+}
+
+func (this *CQueue) DeleteHead() int {
+	if len(this.Stack2) == 0 {
+		for len(this.Stack1) > 0 {
+			this.Stack2 = append(this.Stack2, this.Stack1[len(this.Stack1)-1])
+			this.Stack1 = this.Stack1[:len(this.Stack1)-1]
+		}
+	}
+	if len(this.Stack2) != 0 {
+		value := this.Stack2[len(this.Stack2)-1]
+		this.Stack2 = this.Stack2[:len(this.Stack2)-1]
+		return value
+	}
+	return -1
+}
+
+
 
 //11. 旋转数组的最小数字
 //7 0 1 1 1 1 1 2 3 4
@@ -199,6 +241,57 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		head.Next = l2
 	}
 	return dummy.Next
+}
+
+//27. 二叉树的镜像
+func mirrorTree(root *TreeNode) *TreeNode {
+	if root == nil {
+		return root
+	}
+	tmp := root.Left
+	root.Left = mirrorTree(root.Right)
+	root.Right = mirrorTree(tmp)
+	return root
+}
+
+//30. 包含min函数的栈
+//Mins的第i位对应Slack的前i位的最小值
+type MinStack struct {
+	Slack []int
+	Mins  []int
+}
+
+/** initialize your data structure here. */
+func Constructor() MinStack {
+	return MinStack {
+		Slack : make([]int,0),
+		Mins : []int{math.MaxInt64},
+	}
+}
+
+func (this *MinStack) Push(x int)  {
+	this.Slack = append(this.Slack, x)
+	this.Mins = append(this.Mins, min(x, this.Mins[len(this.Mins)-1]))
+}
+
+func (this *MinStack) Pop()  {
+	this.Slack = this.Slack[:len(this.Slack)-1]
+	this.Mins = this.Mins[:len(this.Mins)-1]
+}
+
+func (this *MinStack) Top() int {
+	return this.Slack[len(this.Slack)-1]
+}
+
+func (this *MinStack) Min() int {
+	return this.Mins[len(this.Mins)-1]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
 }
 
 //54. 二叉搜索树的第k大节点
