@@ -1,4 +1,4 @@
-package main
+package Sword_Finger_Offer
 
 import "math"
 
@@ -292,6 +292,22 @@ func min(a, b int) int {
 		return b
 	}
 	return a
+}
+
+//31. 栈的压入、弹出序列
+//定义一个辅助栈来模拟压栈和出栈
+func validateStackSequences(pushed []int, popped []int) bool {
+	slack := make([]int, 0)
+	i := 0
+	for _, v := range pushed {
+		slack = append(slack, v)
+		for len(slack) != 0 && slack[len(slack)-1] == popped[i] {
+			slack = slack[:len(slack)-1]
+			i++
+		}
+	}
+
+	return len(slack) == 0
 }
 
 //54. 二叉搜索树的第k大节点
