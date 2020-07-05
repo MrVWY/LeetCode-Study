@@ -106,6 +106,11 @@
 (二分)
   + 153 寻找旋转排序数组中的最小值
   + 154 寻找旋转排序数组中的最小值 II
++ [判断出入栈顺序是否正确](https://github.com/MrVWY/LeetCode-Study/blob/886dce73920d2d0c9c6638d8dfb172dce2d2d39b/Sword_Finger_Offer/Sword_Finger_Offer.go#L320)  
++ [正则匹配](https://github.com/MrVWY/LeetCode-Study/blob/master/Regular_match.go)  
+(dp)***(difficult)
+  + 10 正则表达式匹配
+  + 44 通配符匹配
 #### 分类
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
@@ -133,3 +138,4 @@
 + (夜喵场-第28场) 2/4
 + 第193周 1/4    1482. 制作 m 束花所需的最少天数
 + (夜喵场-第29场) 2/4 (第三题可惜了) 1493. 删掉一个元素以后全为 1 的最长子数组
++ 第196周 2/4 5453. 所有蚂蚁掉下来前的最后一刻  5454. 统计全 1 子矩形
