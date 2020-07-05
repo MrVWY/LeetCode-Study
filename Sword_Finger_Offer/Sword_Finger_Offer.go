@@ -86,6 +86,27 @@ func reversePrint(head *ListNode) []int {
 	return res
 }
 
+//07. 重建二叉树
+//[ 根节点, [左子树的前序遍历结果], [右子树的前序遍历结果] ]
+//[ [左子树的中序遍历结果], 根节点, [右子树的中序遍历结果] ]
+func buildTree(preorder []int, inorder []int) *TreeNode {
+	if len(preorder) == 0 || len(inorder) == 0 {
+		return nil
+	}
+	root := 0
+	for k := range inorder {
+		if inorder[k] == preorder[0] {
+			root = k
+			break
+		}
+	}
+	return &TreeNode {
+		Val : preorder[0],
+		Left : buildTree(preorder[1:root+1], inorder[0:root]),
+		Right : buildTree(preorder[root+1:],inorder[root+1:]),
+	}
+}
+
 //09. 用两个栈实现队列
 type CQueue struct {
 	Stack1 []int //插入队列
@@ -121,6 +142,7 @@ func (this *CQueue) DeleteHead() int {
 
 
 //11. 旋转数组的最小数字
+//二分
 //7 0 1 1 1 1 1 2 3 4
 func minArray(numbers []int) int {
 	i, j := 0, len(numbers)-1
@@ -244,6 +266,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 //27. 二叉树的镜像
+//想象只有三个节点的树的镜像
 func mirrorTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return root
