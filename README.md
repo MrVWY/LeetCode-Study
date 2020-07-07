@@ -117,6 +117,8 @@
 + [约瑟夫环问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Josephus_problem.go)
 + [卡特兰数](https://github.com/MrVWY/LeetCode-Study/blob/master/Catalan.go)
 + [二进制求和]()
++ [KMP](https://github.com/MrVWY/LeetCode-Study/blob/master/KMP.go)
++ [线段树](https://github.com/MrVWY/LeetCode-Study/blob/master/Segment_Tree.go)
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 + [树](https://github.com/MrVWY/LeetCode-Study/tree/master/Tree)
   + 101 对称二叉树 |
