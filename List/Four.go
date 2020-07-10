@@ -162,3 +162,39 @@ func kthToLast(head *ListNode, k int) int {
 	}
 	return head.Val
 }
+
+//148. 排序链表
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	slow, fast := head, head
+	for fast != nil && fast.Next != nil && fast.Next.Next != nil{
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	mid := slow.Next
+	slow.Next = nil
+	Left, Right := sortList(head), sortList(mid)
+	return merge(Left, Right)
+}
+
+func merge(Left, Right *ListNode) *ListNode {
+	res := &ListNode{Val: 0}
+	h := res
+	for Left != nil && Right != nil {
+		if Left.Val <= Right.Val {
+			h.Next, Left = Left, Left.Next
+		}else{
+			h.Next, Right = Right, Right.Next
+		}
+		h = h.Next
+	}
+	if Left != nil {
+		h.Next, Left = Left, Left.Next
+	}
+	if Right != nil {
+		h.Next, Right = Right, Right.Next
+	}
+	return res.Next
+}

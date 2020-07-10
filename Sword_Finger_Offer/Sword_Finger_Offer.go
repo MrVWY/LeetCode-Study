@@ -358,3 +358,65 @@ func dfs(node *TreeNode) {
 	}
 
 }
+
+
+//60. n个骰子的点数
+func twoSum(n int) []float64 {
+	dp := make([][]int, n+1)
+	for i := 0 ; i < len(dp) ; i++ {
+		dp[i] = make([]int, 6*n+1)
+	}
+	for i := 1 ; i <= 6 ; i++{
+		dp[1][i] = 1
+	}
+	for i := 1 ; i <= n ; i++ {
+		dp[i][i] = 1
+	}
+
+	for i := 2 ; i <= n ; i++ {//几个骰子
+		for j := i+1 ; j <= 6*i ; j++ {//点数
+			for k := 1 ; k <= 6 ; k++ {
+				if j - k <=0 {break}
+				dp[i][j] += dp[i-1][j-k]
+			}
+		}
+	}
+	res := make([]float64, 6*n+1)
+	for i := n ; i <= 6*n ; i++{
+		res[i] = float64(dp[n][i])/ math.Pow(6,float64(n))
+	}
+	return res[n:]
+}
+
+//61. 扑克牌中的顺子
+func isStraight(nums []int) bool {
+	m := make(map[int]bool)
+	max, min := 0, 14
+	for i := 0 ; i < len(nums) ; i++ {
+		if _, ok := m[nums[i]]; ok {
+			return false
+		}
+		if nums[i] == 0 {
+			continue
+		}
+		m[nums[i]] = true
+		min = mins(min, nums[i])
+		max = maxs(max, nums[i])
+	}
+	//fmt.Prinln(max, min)
+	return max - min < 5
+}
+
+func mins(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func maxs(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}

@@ -72,11 +72,13 @@ func isMatch(s string, p string) bool {
 
 		return s[i-1] == p[j-1]
 	}
+
 	f := make([][]bool, m+1)
 	for i := 0 ; i < len(f) ; i++ {
 		f[i] = make([]bool, n+1)
 	}
 	f[0][0] = true
+
 	for i := 0 ; i <= m ; i++ {
 		for j := 1 ; j <= n ; j++ {
 			//(0,0)位是空字符串
