@@ -2,6 +2,7 @@ package Night_Cat_Farm
 
 import "sort"
 
+//5446. 三次操作后最大值与最小值的最小差
 func minDifference(nums []int) int {
 	if len(nums) < 4 {return 0}
 	sort.Ints(nums)

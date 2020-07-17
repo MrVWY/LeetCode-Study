@@ -13,6 +13,13 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
 //03. 数组中重复的数字
 func findRepeatNumber(nums []int) int {
 	m := make(map[int]int, 0)
@@ -265,6 +272,32 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	return dummy.Next
 }
 
+// 26. 树的子结构
+func isSubStructure(A *TreeNode, B *TreeNode) bool {
+	if A == nil || B == nil {
+		return false
+	}
+	if A.Val == B.Val {
+		if complete(A, B) {
+			return true
+		}
+	}
+	return isSubStructure(A.Left, B) || isSubStructure(A.Right, B)
+}
+
+func complete(A *TreeNode, B *TreeNode) bool{
+	if B == nil {
+		return true
+	}
+	if A == nil {
+		return false
+	}
+	if A.Val != B.Val {
+		return false
+	}
+	return complete(A.Left, B.Left) && complete(A.Right, B.Right)
+}
+
 //27. 二叉树的镜像
 //想象只有三个节点的树的镜像
 func mirrorTree(root *TreeNode) *TreeNode {
@@ -332,6 +365,22 @@ func validateStackSequences(pushed []int, popped []int) bool {
 
 	return len(slack) == 0
 }
+
+//48. 最长不含重复字符的子字符串
+//优化之后的滑动窗口
+func lengthOfLongestSubstring(s string) int {
+	m := make(map[byte]int)
+	res, left := 0, 0
+	for right := 0 ; right < len(s) ; right++ {
+		if _, ok := m[s[right]] ; ok {
+			left = max(m[s[right]], left)
+		}
+		m[s[right]] = right + 1 //标记当前元素位置
+		res = max(res, right-left+1)
+	}
+	return res
+}
+
 
 //54. 二叉搜索树的第k大节点
 //中序遍历的顺序为左中右，即得到的是一个递增序列
