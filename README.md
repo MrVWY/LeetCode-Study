@@ -1,5 +1,6 @@
 ## LeetCode Question collection and classification!!! (记录自己Leetcode的解题之路)
 
+###弄清原理和思路,一切源于一个简单的思路-由简到杂
 ### 传送门
 #### 串烧类题目
 
@@ -62,6 +63,7 @@
   + 877 石子游戏
   + 1140 石子游戏 II (未解决)(medium)
   + 1406 石子游戏 III (未解决)(difficult)
+  + 5447 石子游戏 IV (difficult) 
 + [子集](https://github.com/MrVWY/LeetCode-Study/blob/master/bitwise_operation/bitwise_operation_3.go)  
 (位运算)(回溯算法`未完成`)
   + 78 子集 I
@@ -88,6 +90,7 @@
     + 86 分隔链表  (Four.go)
     + 61 旋转链表 (Four.go)  
     + 160 相交链表 (Four.go)  
+    + 148 排序链表 (Four.go)
     + 返回倒数第K个节点 (Four.go)
     + 分割链表 (Four.go)
     + 链表相交 (Four.go)
@@ -111,14 +114,23 @@
 (dp)***(difficult)
   + 10 正则表达式匹配
   + 44 通配符匹配
++ [区域和检索]()
+  +  303 区域和检索 - 数组不可变
+  +  307 区域和检索 - 数组可修改
++ [推箱子](https://github.com/MrVWY/LeetCode-Study/blob/master/Storekeeper.go)  
++ [汉诺塔问题](https://github.com/MrVWY/LeetCode-Study/blob/master/tower_of_Hanoi.go)  
 #### 分类
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
 + [约瑟夫环问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Josephus_problem.go)
 + [卡特兰数](https://github.com/MrVWY/LeetCode-Study/blob/master/Catalan.go)
 + [二进制求和]()
++ [摩尔投票法](https://github.com/MrVWY/LeetCode-Study/blob/master/Moore_voting.go)  
 + [KMP](https://github.com/MrVWY/LeetCode-Study/blob/master/KMP.go)
-+ [线段树](https://github.com/MrVWY/LeetCode-Study/blob/master/Segment_Tree.go)
++ 二种不同的树
+  + [线段树](https://github.com/MrVWY/LeetCode-Study/blob/master/Segment_Tree.go)  
+  + [树状数组]()
++ [并查集](https://github.com/MrVWY/LeetCode-Study/blob/master/Disjoint_Set.go)  
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 + [树](https://github.com/MrVWY/LeetCode-Study/tree/master/Tree)
   + 101 对称二叉树 |
@@ -141,3 +153,5 @@
 + 第193周 1/4    1482. 制作 m 束花所需的最少天数
 + (夜喵场-第29场) 2/4 (第三题可惜了) 1493. 删掉一个元素以后全为 1 的最长子数组
 + 第196周 2/4 5453. 所有蚂蚁掉下来前的最后一刻  5454. 统计全 1 子矩形
++ (夜喵场-第29场) 2/4  5446. 三次操作后最大值与最小值的最小差   5447 石子游戏 IV
++ 第196周 2/4  脑子短路  
