@@ -43,7 +43,7 @@ func queryTree(tree, arr []int, node, start, end, L, R int) int{
 	}
 
 	mid := (start+end) >> 1
-	leftNode := node * 2 + 1
+	leftNode := node * 2 + 1  // node << 1 | 1
 	rightNode := node * 2 + 2
 
 	return queryTree(tree, arr, leftNode, start, mid, L, R) + queryTree(tree, arr, rightNode, mid+1, end, L, R)
