@@ -119,18 +119,26 @@
   +  307 区域和检索 - 数组可修改
 + [推箱子](https://github.com/MrVWY/LeetCode-Study/blob/master/Storekeeper.go)  
 + [汉诺塔问题](https://github.com/MrVWY/LeetCode-Study/blob/master/tower_of_Hanoi.go)  
++ [滚动数组+优化]()
+  + 63 不同路径 II
+  + 70 爬楼梯
+  + 46 把数字翻译成字符串
 #### 分类
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
 + [约瑟夫环问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Josephus_problem.go)
 + [卡特兰数](https://github.com/MrVWY/LeetCode-Study/blob/master/Catalan.go)
 + [二进制求和]()
++ [交换数字]()
 + [摩尔投票法](https://github.com/MrVWY/LeetCode-Study/blob/master/Moore_voting.go)  
 + [KMP](https://github.com/MrVWY/LeetCode-Study/blob/master/KMP.go)
-+ 二种不同的树
++ [最小公倍数 = 两数相乘/   最大公约数-可以利用辗转相除法]()
++ 高级树
   + [线段树](https://github.com/MrVWY/LeetCode-Study/blob/master/Segment_Tree.go)  
+  + [字典树](https://github.com/MrVWY/LeetCode-Study/blob/master/Trie_Tree.go)  
   + [树状数组]()
 + [并查集](https://github.com/MrVWY/LeetCode-Study/blob/master/Disjoint_Set.go)  
++ [逆波兰表达式-计算器](https://github.com/MrVWY/LeetCode-Study/blob/master/Polish_Notation.go)  
 + [堆](https://github.com/MrVWY/LeetCode-Study/tree/master/heap)  
 + [树](https://github.com/MrVWY/LeetCode-Study/tree/master/Tree)
   + 101 对称二叉树 |
@@ -155,3 +163,4 @@
 + 第196周 2/4 5453. 所有蚂蚁掉下来前的最后一刻  5454. 统计全 1 子矩形
 + (夜喵场-第29场) 2/4  5446. 三次操作后最大值与最小值的最小差   5447 石子游戏 IV
 + 第196周 2/4  脑子短路  
++ 第198周  5465. 子树中标签相同的节点数  5467. 找到最接近目标值的函数值 超时
