@@ -123,6 +123,9 @@
   + 63 不同路径 II
   + 70 爬楼梯
   + 46 把数字翻译成字符串
++ [不同的二叉搜索树]()
+  + 
+  + 
 + [区间调度问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Interval_Scheduling.go)  
   + 56 合并区间
   + 986 区间列表的交集
@@ -157,7 +160,7 @@
   + 41 缺失的第一个正数
   + 442 数组中重复的数据
   + 448 找到所有数组中消失的数字
-+ [剑指Offer](https://github.com/MrVWY/LeetCode-Study/blob/master/Sword_Finger_Offer.go)  
++ [剑指Offer](https://github.com/MrVWY/LeetCode-Study/tree/master/Sword_Finger_Offer)  
 #### [周赛+夜喵](https://github.com/MrVWY/LeetCode-Study/tree/master/Competition)
 + (夜喵场-第27场) 5410 课程安排 IV  ---打表法  
 + 第192周 3/4
