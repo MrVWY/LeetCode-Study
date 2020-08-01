@@ -139,7 +139,7 @@
 + [交换数字]()
 + [摩尔投票法](https://github.com/MrVWY/LeetCode-Study/blob/master/Moore_voting.go)  
 + [KMP](https://github.com/MrVWY/LeetCode-Study/blob/master/KMP.go)
-+ [最小公倍数 = 两数相乘/   最大公约数-可以利用辗转相除法]()
++ [最小公倍数 = 两数相乘/   最大公约数------可以利用辗转相除法](https://github.com/MrVWY/LeetCode-Study/blob/master/Gcd.go)  
 + [二进制转十进制](https://github.com/MrVWY/LeetCode-Study/blob/master/BinaryToDecimal.go)  
 + 高级树
   + [线段树](https://github.com/MrVWY/LeetCode-Study/blob/master/Segment_Tree.go)  
