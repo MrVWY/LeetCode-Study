@@ -49,3 +49,47 @@ func intervalIntersection(A [][]int, B [][]int) [][]int {
 	}
 	return res
 }
+
+//435. 无重叠区间
+func eraseOverlapIntervals(intervals [][]int) int {
+	n := len(intervals)
+	return n - intervalSchedule(intervals)
+}
+
+func intervalSchedule(intervals [][]int) int {
+	if len(intervals) == 0 {
+		return 0
+	}
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][1] < intervals[j][1]
+	})
+	count := 1 //无重叠区间数量
+	x_end := intervals[0][1]
+	for _, interval := range intervals {
+		start := interval[0]
+		if start >= x_end {
+			count++
+			x_end = interval[1]
+		}
+	}
+	return count
+}
+
+func findMinArrowShots(points [][]int) int {
+	if len(points) == 0 {
+		return 0
+	}
+	sort.Slice(points, func(i, j int) bool {
+		return points[i][1] < points[j][1]
+	})
+	count := 1 //无重叠区间数量
+	x_end := points[0][1]
+	for _, point := range points {
+		start := point[0]
+		if start > x_end {
+			count++
+			x_end = point[1]
+		}
+	}
+	return count
+}
