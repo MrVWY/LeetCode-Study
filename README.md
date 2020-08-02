@@ -124,12 +124,15 @@
   + 63 不同路径 II
   + 70 爬楼梯
   + 46 把数字翻译成字符串
-+ [不同的二叉搜索树]()
++ [不同的二叉搜索树]()  
   + 
   + 
 + [区间调度问题](https://github.com/MrVWY/LeetCode-Study/blob/master/Interval_Scheduling.go)  
   + 56 合并区间
   + 986 区间列表的交集
+  + 贪心
+    + 435 无重叠区间
+    + 452 用最少数量的箭引爆气球
 #### 分类
 + [七大排序](https://github.com/MrVWY/LeetCode-Study/blob/master/Sort/Sort.go)
 + [位运算](https://github.com/MrVWY/LeetCode-Study/tree/master/bitwise_operation/bitwise_operation_1.go)
