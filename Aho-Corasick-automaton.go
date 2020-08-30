@@ -53,7 +53,7 @@ func build(tree []*Aho) {
 					tree[tree[father].next[i]].fail = 0
 				}else {
 					v := tree[father].fail //father的失配指针
-					//寻找
+					//向上寻找
 					for v != -1 {
 						//father失配指针下是否有对应的节点
 						if tree[v].next[i] != 0 {
@@ -74,6 +74,32 @@ func build(tree []*Aho) {
 	}
 }
 
-func match() {
-	
+func match(s string, tree []*Aho) int {
+	n := len(s)
+	res, now := 0, 0
+	for i := 0 ; i < n ; i++ {
+		c := s[i]
+		if tree[now].next[c-'a'] != 0 {
+			now = tree[now].next[c-'a']
+		}else {
+			//匹配不上就只能转去失配指针
+			point := tree[now].fail
+			//如果point = -1 那么说明回到了根节点-最顶上的那个节点
+			for point != -1 && tree[point].next[c-'a'] == 0 {
+				point = tree[point].fail
+			}
+			if point == -1 {
+				now = 0
+			}else {
+				now = tree[point].next[c-'a']
+			}
+		}
+		//计算结果?????
+		for now != 0 {
+			res += tree[now].cnt
+			tree[now].cnt = 0
+			now = tree[now].fail
+		}
+	}
+	return res
 }
