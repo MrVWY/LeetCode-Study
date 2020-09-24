@@ -1,7 +1,7 @@
 package main
 
 import "strings"
-
+var dirt = [][]int{{1,0},{-1,0},{0,1},{0,-1}}
 //1、预处理
 func addBoundaries(s string, add string) string{
 	S := make([]string, 0)
