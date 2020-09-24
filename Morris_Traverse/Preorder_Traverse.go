@@ -14,7 +14,7 @@ func Preorder_Traverse(root *TreeNode) {
 			}
 			if pre.Right == nil {
 				pre.Right = cur
-				fmt.Println(cur.Val)
+				fmt.Println(cur.Val) //打印根节点
 				cur = cur.Left
 				continue
 			}else {
