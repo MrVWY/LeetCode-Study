@@ -1,6 +1,6 @@
 package main
 
-//1165
+//1116
 import (
 	"fmt"
 	"runtime"
@@ -33,6 +33,7 @@ func (Z *ZeroEvenOdd) Zero(printNumber func(int)) {
 			i--
 		}
 	}
+	//将管道里的数据清空
 	if 0 == Z.n % 2 {
 		<- Z.streamEvenToZero
 	}else {
