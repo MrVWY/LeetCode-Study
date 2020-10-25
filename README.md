@@ -1,4 +1,4 @@
-## LeetCode Question collection and classification!!! (记录自己Leetcode的解题之路)
+## LeetCode Question collection and classification!!! 
 
 ###弄清原理和思路,一切源于一个简单的思路-由简到杂
 ### 传送门
